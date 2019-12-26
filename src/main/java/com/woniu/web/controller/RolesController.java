@@ -16,7 +16,7 @@ public class RolesController {
 	@RequestMapping("save")
 	public String save() {
 		System.out.println("RolesController.save():"+service);
-		return "admin/index";
+		return "admin/index"; 
 	}
 	
 }
