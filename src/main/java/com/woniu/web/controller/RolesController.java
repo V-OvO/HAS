@@ -11,12 +11,12 @@ import com.woniu.service.RolesService;
 public class RolesController {
 	
 	@Autowired
-	private RolesService service;
+	private RolesService service; 
 	
 	@RequestMapping("save")
 	public String save() {
 		System.out.println("RolesController.save():"+service);
-		return "admin/index"; 
+		return "admin/index";
 	}
 	
 }
