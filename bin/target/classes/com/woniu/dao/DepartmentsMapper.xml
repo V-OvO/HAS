@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniu.dao.DepartmentsMapper">
+  <resultMap id="BaseResultMap" type="com.woniu.domain.Departments">
+    <id column="departments_id" jdbcType="INTEGER" property="departmentsId" />
+    <result column="departments_name" jdbcType="VARCHAR" property="departmentsName" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.woniu.domain.Departments">
+    <result column="departments_desc" jdbcType="LONGVARCHAR" property="departmentsDesc" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    departments_id, departments_name
+  </sql>
+  <sql id="Blob_Column_List">
+    departments_desc
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="com.woniu.domain.DepartmentsExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from departments
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="com.woniu.domain.DepartmentsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from departments
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from departments
+    where departments_id = #{departmentsId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from departments
+    where departments_id = #{departmentsId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.woniu.domain.DepartmentsExample">
+    delete from departments
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.woniu.domain.Departments">
+    insert into departments (departments_id, departments_name, departments_desc
+      )
+    values (#{departmentsId,jdbcType=INTEGER}, #{departmentsName,jdbcType=VARCHAR}, #{departmentsDesc,jdbcType=LONGVARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.woniu.domain.Departments">
+    insert into departments
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="departmentsId != null">
+        departments_id,
+      </if>
+      <if test="departmentsName != null">
+        departments_name,
+      </if>
+      <if test="departmentsDesc != null">
+        departments_desc,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="departmentsId != null">
+        #{departmentsId,jdbcType=INTEGER},
+      </if>
+      <if test="departmentsName != null">
+        #{departmentsName,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentsDesc != null">
+        #{departmentsDesc,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.woniu.domain.DepartmentsExample" resultType="java.lang.Long">
+    select count(*) from departments
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update departments
+    <set>
+      <if test="record.departmentsId != null">
+        departments_id = #{record.departmentsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.departmentsName != null">
+        departments_name = #{record.departmentsName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.departmentsDesc != null">
+        departments_desc = #{record.departmentsDesc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update departments
+    set departments_id = #{record.departmentsId,jdbcType=INTEGER},
+      departments_name = #{record.departmentsName,jdbcType=VARCHAR},
+      departments_desc = #{record.departmentsDesc,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update departments
+    set departments_id = #{record.departmentsId,jdbcType=INTEGER},
+      departments_name = #{record.departmentsName,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.woniu.domain.Departments">
+    update departments
+    <set>
+      <if test="departmentsName != null">
+        departments_name = #{departmentsName,jdbcType=VARCHAR},
+      </if>
+      <if test="departmentsDesc != null">
+        departments_desc = #{departmentsDesc,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where departments_id = #{departmentsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.woniu.domain.Departments">
+    update departments
+    set departments_name = #{departmentsName,jdbcType=VARCHAR},
+      departments_desc = #{departmentsDesc,jdbcType=LONGVARCHAR}
+    where departments_id = #{departmentsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.woniu.domain.Departments">
+    update departments
+    set departments_name = #{departmentsName,jdbcType=VARCHAR}
+    where departments_id = #{departmentsId,jdbcType=INTEGER}
+  </update>
+</mapper>

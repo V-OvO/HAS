@@ -1,0 +1,14 @@
+server:
+  port: 8808
+
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+      
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/has?characterEncoding=utf8
+    username: root
+    password: 19961123
