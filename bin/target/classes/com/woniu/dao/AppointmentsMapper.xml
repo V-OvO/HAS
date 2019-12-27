@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniu.dao.AppointmentsMapper">
+  <resultMap id="BaseResultMap" type="com.woniu.domain.Appointments">
+    <id column="appointments_id" jdbcType="INTEGER" property="appointmentsId" />
+    <result column="appointments_date" jdbcType="DATE" property="appointmentsDate" />
+    <result column="appointments_status" jdbcType="VARCHAR" property="appointmentsStatus" />
+    <result column="patients_id" jdbcType="INTEGER" property="patientsId" />
+    <result column="pool_id" jdbcType="INTEGER" property="poolId" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    appointments_id, appointments_date, appointments_status, patients_id, pool_id
+  </sql>
+  <select id="selectByExample" parameterType="com.woniu.domain.AppointmentsExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from appointments
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from appointments
+    where appointments_id = #{appointmentsId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from appointments
+    where appointments_id = #{appointmentsId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.woniu.domain.AppointmentsExample">
+    delete from appointments
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.woniu.domain.Appointments">
+    insert into appointments (appointments_id, appointments_date, appointments_status, 
+      patients_id, pool_id)
+    values (#{appointmentsId,jdbcType=INTEGER}, #{appointmentsDate,jdbcType=DATE}, #{appointmentsStatus,jdbcType=VARCHAR}, 
+      #{patientsId,jdbcType=INTEGER}, #{poolId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.woniu.domain.Appointments">
+    insert into appointments
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="appointmentsId != null">
+        appointments_id,
+      </if>
+      <if test="appointmentsDate != null">
+        appointments_date,
+      </if>
+      <if test="appointmentsStatus != null">
+        appointments_status,
+      </if>
+      <if test="patientsId != null">
+        patients_id,
+      </if>
+      <if test="poolId != null">
+        pool_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="appointmentsId != null">
+        #{appointmentsId,jdbcType=INTEGER},
+      </if>
+      <if test="appointmentsDate != null">
+        #{appointmentsDate,jdbcType=DATE},
+      </if>
+      <if test="appointmentsStatus != null">
+        #{appointmentsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="patientsId != null">
+        #{patientsId,jdbcType=INTEGER},
+      </if>
+      <if test="poolId != null">
+        #{poolId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.woniu.domain.AppointmentsExample" resultType="java.lang.Long">
+    select count(*) from appointments
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update appointments
+    <set>
+      <if test="record.appointmentsId != null">
+        appointments_id = #{record.appointmentsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.appointmentsDate != null">
+        appointments_date = #{record.appointmentsDate,jdbcType=DATE},
+      </if>
+      <if test="record.appointmentsStatus != null">
+        appointments_status = #{record.appointmentsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="record.patientsId != null">
+        patients_id = #{record.patientsId,jdbcType=INTEGER},
+      </if>
+      <if test="record.poolId != null">
+        pool_id = #{record.poolId,jdbcType=INTEGER},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update appointments
+    set appointments_id = #{record.appointmentsId,jdbcType=INTEGER},
+      appointments_date = #{record.appointmentsDate,jdbcType=DATE},
+      appointments_status = #{record.appointmentsStatus,jdbcType=VARCHAR},
+      patients_id = #{record.patientsId,jdbcType=INTEGER},
+      pool_id = #{record.poolId,jdbcType=INTEGER}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.woniu.domain.Appointments">
+    update appointments
+    <set>
+      <if test="appointmentsDate != null">
+        appointments_date = #{appointmentsDate,jdbcType=DATE},
+      </if>
+      <if test="appointmentsStatus != null">
+        appointments_status = #{appointmentsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="patientsId != null">
+        patients_id = #{patientsId,jdbcType=INTEGER},
+      </if>
+      <if test="poolId != null">
+        pool_id = #{poolId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where appointments_id = #{appointmentsId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.woniu.domain.Appointments">
+    update appointments
+    set appointments_date = #{appointmentsDate,jdbcType=DATE},
+      appointments_status = #{appointmentsStatus,jdbcType=VARCHAR},
+      patients_id = #{patientsId,jdbcType=INTEGER},
+      pool_id = #{poolId,jdbcType=INTEGER}
+    where appointments_id = #{appointmentsId,jdbcType=INTEGER}
+  </update>
+</mapper>
