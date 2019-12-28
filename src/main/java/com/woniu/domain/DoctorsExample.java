@@ -224,6 +224,66 @@ public class DoctorsExample {
             return (Criteria) this;
         }
 
+        public Criteria andUsersIdIsNull() {
+            addCriterion("users_id is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsersIdIsNotNull() {
+            addCriterion("users_id is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsersIdEqualTo(Integer value) {
+            addCriterion("users_id =", value, "usersId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsersIdNotEqualTo(Integer value) {
+            addCriterion("users_id <>", value, "usersId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsersIdGreaterThan(Integer value) {
+            addCriterion("users_id >", value, "usersId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsersIdGreaterThanOrEqualTo(Integer value) {
+            addCriterion("users_id >=", value, "usersId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsersIdLessThan(Integer value) {
+            addCriterion("users_id <", value, "usersId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsersIdLessThanOrEqualTo(Integer value) {
+            addCriterion("users_id <=", value, "usersId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsersIdIn(List<Integer> values) {
+            addCriterion("users_id in", values, "usersId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsersIdNotIn(List<Integer> values) {
+            addCriterion("users_id not in", values, "usersId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsersIdBetween(Integer value1, Integer value2) {
+            addCriterion("users_id between", value1, value2, "usersId");
+            return (Criteria) this;
+        }
+
+        public Criteria andUsersIdNotBetween(Integer value1, Integer value2) {
+            addCriterion("users_id not between", value1, value2, "usersId");
+            return (Criteria) this;
+        }
+
         public Criteria andDoctorsNameIsNull() {
             addCriterion("doctors_name is null");
             return (Criteria) this;
@@ -361,6 +421,76 @@ public class DoctorsExample {
 
         public Criteria andDoctorsPhotoNotBetween(String value1, String value2) {
             addCriterion("doctors_photo not between", value1, value2, "doctorsPhoto");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoctorsPhoneIsNull() {
+            addCriterion("doctors_phone is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoctorsPhoneIsNotNull() {
+            addCriterion("doctors_phone is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoctorsPhoneEqualTo(String value) {
+            addCriterion("doctors_phone =", value, "doctorsPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoctorsPhoneNotEqualTo(String value) {
+            addCriterion("doctors_phone <>", value, "doctorsPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoctorsPhoneGreaterThan(String value) {
+            addCriterion("doctors_phone >", value, "doctorsPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoctorsPhoneGreaterThanOrEqualTo(String value) {
+            addCriterion("doctors_phone >=", value, "doctorsPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoctorsPhoneLessThan(String value) {
+            addCriterion("doctors_phone <", value, "doctorsPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoctorsPhoneLessThanOrEqualTo(String value) {
+            addCriterion("doctors_phone <=", value, "doctorsPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoctorsPhoneLike(String value) {
+            addCriterion("doctors_phone like", value, "doctorsPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoctorsPhoneNotLike(String value) {
+            addCriterion("doctors_phone not like", value, "doctorsPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoctorsPhoneIn(List<String> values) {
+            addCriterion("doctors_phone in", values, "doctorsPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoctorsPhoneNotIn(List<String> values) {
+            addCriterion("doctors_phone not in", values, "doctorsPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoctorsPhoneBetween(String value1, String value2) {
+            addCriterion("doctors_phone between", value1, value2, "doctorsPhone");
+            return (Criteria) this;
+        }
+
+        public Criteria andDoctorsPhoneNotBetween(String value1, String value2) {
+            addCriterion("doctors_phone not between", value1, value2, "doctorsPhone");
             return (Criteria) this;
         }
     }
