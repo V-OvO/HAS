@@ -1,0 +1,48 @@
+package com.woniu.service.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.woniu.dao.DepartmentsMapper;
+import com.woniu.domain.Departments;
+import com.woniu.service.DepartmentsService;
+
+@Service
+public class DepartmentsServiceImpl implements DepartmentsService {
+	
+	@Autowired
+	private DepartmentsMapper mapper;
+
+	@Override
+	public void save(DepartmentsService r) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(Integer departments_id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(DepartmentsService r) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Departments find(Integer departments_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Departments> find() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
