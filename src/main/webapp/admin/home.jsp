@@ -36,7 +36,7 @@
 					<li>
 						角色管理
 						<ul>
-							<li><a href="/roles/find" target="mainFrame">查看角色</a></li>
+							<li><a href="/roles/findAll" target="mainFrame">查看角色</a></li>
 							<li><a href="/admin/roles/saveUI.jsp" target="mainFrame">添加角色</a></li>
 						</ul>
 					</li>

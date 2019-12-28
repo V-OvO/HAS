@@ -50,7 +50,7 @@ public class RootConfig {
 				"SELECT roles_name FROM users_roles ur JOIN users u on ur.`users_id` = u.`users_id` JOIN roles r ON ur.`roles_id` = r.`roles_id` WHERE users_number = ?");
 		// 根据角色查权限
 		realm.setPermissionsQuery(
-				"SELECT permission_name FROM roles_permissions rp JOIN roles r ON rp.`roles_id`=r.`roles_id` JOIN permissions p ON rp.`permissions_id`=p.`permissions_id` WHERE roles_name = ？");
+				"SELECT permission_name FROM roles_permissions rp JOIN roles r ON rp.`roles_id`=r.`roles_id` JOIN permissions p ON rp.`permissions_id`=p.`permissions_id` WHERE roles_name = ?");
 		// 允许角色查权限
 		realm.setPermissionsLookupEnabled(true);
 		realm.setCredentialsMatcher(hcm());
