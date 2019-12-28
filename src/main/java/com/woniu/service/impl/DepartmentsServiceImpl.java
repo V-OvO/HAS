@@ -16,33 +16,33 @@ public class DepartmentsServiceImpl implements DepartmentsService {
 	private DepartmentsMapper mapper;
 
 	@Override
-	public void save(DepartmentsService r) {
+	public void save(Departments d) {
 		// TODO Auto-generated method stub
-
+		mapper.insertSelective(d);
 	}
 
 	@Override
 	public void delete(Integer departments_id) {
 		// TODO Auto-generated method stub
-
+		mapper.deleteByPrimaryKey(departments_id);
 	}
 
 	@Override
-	public void update(DepartmentsService r) {
+	public void update(Departments d) {
 		// TODO Auto-generated method stub
-
+		mapper.updateByPrimaryKeySelective(d);
 	}
 
 	@Override
 	public Departments find(Integer departments_id) {
 		// TODO Auto-generated method stub
-		return null;
+		return mapper.selectByPrimaryKey(departments_id);
 	}
 
 	@Override
 	public List<Departments> find() {
 		// TODO Auto-generated method stub
-		return null;
+		return mapper.selectByExample(null);
 	}
 
 }

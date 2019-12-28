@@ -16,33 +16,34 @@ public class ProjectsServiceImpl implements ProjectsService {
 	private ProjectsMapper mapper;
 
 	@Override
-	public void save(ProjectsService r) {
+	public void save(Projects p) {
 		// TODO Auto-generated method stub
-
+		mapper.insertSelective(p);
 	}
 
 	@Override
 	public void delete(Integer projects_id) {
 		// TODO Auto-generated method stub
-
+		mapper.deleteByPrimaryKey(projects_id);
 	}
 
 	@Override
-	public void update(ProjectsService r) {
+	public void update(Projects p) {
 		// TODO Auto-generated method stub
-
+		mapper.updateByPrimaryKeySelective(p);
 	}
 
 	@Override
 	public Projects find(Integer projects_id) {
 		// TODO Auto-generated method stub
-		return null;
+		return mapper.selectByPrimaryKey(projects_id);
 	}
 
 	@Override
 	public List<Projects> find() {
 		// TODO Auto-generated method stub
-		return null;
+		return mapper.selectByExample(null);
 	}
+
 
 }

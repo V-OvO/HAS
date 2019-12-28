@@ -16,21 +16,21 @@ public class RolesServiceImpl implements RolesService {
 	private RolesMapper mapper;
 
 	@Override
-	public void save(RolesService r) {
+	public void save(Roles r) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public void delete(Integer roles_id) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
-	public void update(RolesService r) {
+	public void update(Roles r) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
@@ -45,4 +45,5 @@ public class RolesServiceImpl implements RolesService {
 		return null;
 	}
 
+	
 }
