@@ -6,43 +6,41 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.woniu.domain.Roles;
-import com.woniu.service.RolesService;
+import com.woniu.domain.Permissions;
+import com.woniu.service.PermissionsService;
 
 @Controller
-@RequestMapping("roles")
-public class RolesController {
-
+public class PermissionsController {
 	@Autowired
-	private RolesService service;
+	private PermissionsService service;
 
 	@RequestMapping("save")
-	public String save(Roles roles) {
-		service.save(roles);
+	public String save(Permissions permissions) {
+		service.save(permissions);
 		return "admin/index";
 	}
 
 	@RequestMapping("delete")
-	public String delete(Integer roles_id) {
-		service.delete(roles_id);
+	public String delete(Integer permissionsId) {
+		service.delete(permissionsId);
 		return "admin/index";
 	}
 
 	@RequestMapping("update")
-	public String update(Roles roles) {
-		service.update(roles);
+	public String update(Permissions permissions) {
+		service.update(permissions);
 		return "admin/index";
 	}
 
 	@RequestMapping("findByPrimaryKey")
-	public String findByPrimaryKey(Integer roles_id) {
-		Roles roles = service.find(roles_id);
+	public String findByPrimaryKey(Integer permissionsId) {
+		Permissions permissions = service.find(permissionsId);
 		return "admin/index";
 	}
 
 	@RequestMapping("findAll")
 	public String findAll() {
-		List<Roles> roles = service.find();
+		List<Permissions> permissions = service.find();
 		return "admin/index";
 	}
 

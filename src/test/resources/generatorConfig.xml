@@ -18,7 +18,7 @@
         <!-- 数据库链接URL、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
             connectionURL="jdbc:mysql://localhost:3306/has?characterEncoding=utf8"
-            userId="root" password="19961123">
+            userId="root" password="root">
         </jdbcConnection>
 
          <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer;
@@ -68,6 +68,7 @@
         <table tableName="roles" />
         <table tableName="schedulings" />
         <table tableName="teams" />
+        <table tableName="users" />
         
     </context>
 </generatorConfiguration>

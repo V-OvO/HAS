@@ -7,9 +7,13 @@ public class Doctors implements Serializable {
 
     private Integer diagnoseroomsId;
 
+    private Integer usersId;
+
     private String doctorsName;
 
     private String doctorsPhoto;
+
+    private String doctorsPhone;
 
     private String doctorsDesc;
 
@@ -31,6 +35,14 @@ public class Doctors implements Serializable {
         this.diagnoseroomsId = diagnoseroomsId;
     }
 
+    public Integer getUsersId() {
+        return usersId;
+    }
+
+    public void setUsersId(Integer usersId) {
+        this.usersId = usersId;
+    }
+
     public String getDoctorsName() {
         return doctorsName;
     }
@@ -45,6 +57,14 @@ public class Doctors implements Serializable {
 
     public void setDoctorsPhoto(String doctorsPhoto) {
         this.doctorsPhoto = doctorsPhoto == null ? null : doctorsPhoto.trim();
+    }
+
+    public String getDoctorsPhone() {
+        return doctorsPhone;
+    }
+
+    public void setDoctorsPhone(String doctorsPhone) {
+        this.doctorsPhone = doctorsPhone == null ? null : doctorsPhone.trim();
     }
 
     public String getDoctorsDesc() {
@@ -63,8 +83,10 @@ public class Doctors implements Serializable {
         sb.append("Hash = ").append(hashCode());
         sb.append(", doctorsId=").append(doctorsId);
         sb.append(", diagnoseroomsId=").append(diagnoseroomsId);
+        sb.append(", usersId=").append(usersId);
         sb.append(", doctorsName=").append(doctorsName);
         sb.append(", doctorsPhoto=").append(doctorsPhoto);
+        sb.append(", doctorsPhone=").append(doctorsPhone);
         sb.append(", doctorsDesc=").append(doctorsDesc);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
