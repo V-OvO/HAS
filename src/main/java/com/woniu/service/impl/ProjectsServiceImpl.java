@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.woniu.dao.ProjectsMapper;
 import com.woniu.domain.Projects;
 import com.woniu.service.ProjectsService;
 
 @Service
+@Transactional
 public class ProjectsServiceImpl implements ProjectsService {
 	
 	@Autowired
