@@ -19,14 +19,15 @@ public class DepartmentsServiceImpl implements DepartmentsService {
 
 	@Override
 	public void save(Departments d) {
+		System.out.println("DepartmentsServiceImpl.save()");
 		// TODO Auto-generated method stub
-		mapper.insertSelective(d);
+		mapper.insert(d);
 	}
 
 	@Override
-	public void delete(Integer departments_id) {
+	public void delete(Integer departmentsId) {
 		// TODO Auto-generated method stub
-		mapper.deleteByPrimaryKey(departments_id);
+		mapper.deleteByPrimaryKey(departmentsId);
 	}
 
 	@Override
@@ -36,15 +37,15 @@ public class DepartmentsServiceImpl implements DepartmentsService {
 	}
 
 	@Override
-	public Departments find(Integer departments_id) {
+	public Departments find(Integer departmentsId) {
 		// TODO Auto-generated method stub
-		return mapper.selectByPrimaryKey(departments_id);
+		return mapper.selectByPrimaryKey(departmentsId);
 	}
 
 	@Override
 	public List<Departments> find() {
 		// TODO Auto-generated method stub
-		return mapper.selectByExample(null);
+		return mapper.selectByExampleWithBLOBs(null);
 	}
 
 }
