@@ -10,6 +10,7 @@ import com.woniu.domain.Permissions;
 import com.woniu.service.PermissionsService;
 
 @Controller
+@RequestMapping("permissions")
 public class PermissionsController {
 	@Autowired
 	private PermissionsService service;
@@ -41,7 +42,7 @@ public class PermissionsController {
 	@RequestMapping("findAll")
 	public String findAll() {
 		List<Permissions> permissions = service.find();
-		return "admin/index";
+		return "redirct:/admin/index";
 	}
 
 }

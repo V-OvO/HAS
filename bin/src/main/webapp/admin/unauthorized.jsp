@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>医院预约平台</h3>
-	
+	对不起，您没有权限访问该资源！
+	点击<a href="/admin/home.jsp" target="_top">这里</a>返回
 </body>
 </html>
