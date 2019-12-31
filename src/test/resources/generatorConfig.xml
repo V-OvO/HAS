@@ -18,7 +18,7 @@
         <!-- 数据库链接URL、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
             connectionURL="jdbc:mysql://localhost:3306/has?characterEncoding=utf8"
-            userId="root" password="19961123">
+            userId="root" password="123456">
         </jdbcConnection>
 
          <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer;
@@ -57,17 +57,17 @@
         enableSelectByExample:Select多条语句中加入where条件查询，默认为true开启
         selectByExampleQueryId:Select单个对象语句中加入where条件查询，默认为true开启
         -->
-        <table tableName="appointments" />
-        <table tableName="departments" />
+<!--         <table tableName="appointments" />
+        <table tableName="departments" /> -->
         <table tableName="diagnoserooms" />
-        <table tableName="doctors" />
+<!--         <table tableName="doctors" /> -->
         <table tableName="patients" />
-        <table tableName="permissions" />
+<!--         <table tableName="permissions" />
         <table tableName="pool" />
         <table tableName="projects" />
         <table tableName="roles" />
         <table tableName="schedulings" />
-        <table tableName="teams" />
+        <table tableName="teams" /> -->
         
     </context>
 </generatorConfiguration>
