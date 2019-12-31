@@ -43,6 +43,7 @@ public class PatientsController {
 		model.addAttribute("p", p);
 		return "admin/patients/updateUI";
 	}
+	//修改
 	@RequestMapping("update")
 	public String update(Patients obj) {
 		service.update(obj);
