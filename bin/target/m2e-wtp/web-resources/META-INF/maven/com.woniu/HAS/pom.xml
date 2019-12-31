@@ -56,6 +56,32 @@
 	  		<groupId>org.springframework.boot</groupId>
 	  		<artifactId>spring-boot-devtools</artifactId>
 	  	</dependency>
+<<<<<<< HEAD
+=======
+	  	<dependency>
+	  		<groupId>com.alibaba</groupId>
+	  		<artifactId>druid</artifactId>
+	  		<version>1.1.16</version>
+	  	</dependency>
+		<dependency>
+		    <groupId>org.apache.shiro</groupId>
+		    <artifactId>shiro-all</artifactId>
+		    <version>1.4.2</version>
+		    <type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+>>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
 	</dependencies>
   
 </project>
