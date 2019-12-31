@@ -18,14 +18,8 @@ public class RolesServiceImpl implements RolesService {
 	private RolesMapper mapper;
 
 	@Override
-<<<<<<< HEAD
-	public void save(RolesService r) {
-		// TODO Auto-generated method stub
- 
-=======
 	public void save(Roles r) {
 		mapper.insert(r);
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
 	}
 
 	@Override
