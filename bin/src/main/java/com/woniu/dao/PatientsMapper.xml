@@ -101,19 +101,11 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.woniu.domain.Patients">
-<<<<<<< HEAD
-    insert into patients (patients_id, patients_name, patients_phone, 
-      patients_idcard, patients_credit, roles_id
-      )
-    values (#{patientsId,jdbcType=INTEGER}, #{patientsName,jdbcType=VARCHAR}, #{patientsPhone,jdbcType=VARCHAR}, 
-      #{patientsIdcard,jdbcType=VARCHAR}, #{patientsCredit,jdbcType=INTEGER}, #{rolesId,jdbcType=INTEGER}
-=======
     insert into patients (patients_id, users_id, patients_name, 
       patients_phone, patients_idcard, patients_credit
       )
     values (#{patientsId,jdbcType=INTEGER}, #{usersId,jdbcType=INTEGER}, #{patientsName,jdbcType=VARCHAR}, 
       #{patientsPhone,jdbcType=VARCHAR}, #{patientsIdcard,jdbcType=VARCHAR}, #{patientsCredit,jdbcType=INTEGER}
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
       )
   </insert>
   <insert id="insertSelective" parameterType="com.woniu.domain.Patients">
@@ -122,12 +114,9 @@
       <if test="patientsId != null">
         patients_id,
       </if>
-<<<<<<< HEAD
-=======
       <if test="usersId != null">
         users_id,
       </if>
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
       <if test="patientsName != null">
         patients_name,
       </if>
