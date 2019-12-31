@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.woniu.domain.Patients">
     <id column="patients_id" jdbcType="INTEGER" property="patientsId" />
     <result column="users_id" jdbcType="INTEGER" property="usersId" />
-    <result column="patients_name" jdbcType="VARCHAR" property="patientsName" />
+    <result column="patients_name" jdbcType="VARCHAR" property="patientsName" /> 
     <result column="patients_phone" jdbcType="VARCHAR" property="patientsPhone" />
     <result column="patients_idcard" jdbcType="VARCHAR" property="patientsIdcard" />
     <result column="patients_credit" jdbcType="INTEGER" property="patientsCredit" />
