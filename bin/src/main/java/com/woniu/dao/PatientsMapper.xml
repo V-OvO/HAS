@@ -3,18 +3,11 @@
 <mapper namespace="com.woniu.dao.PatientsMapper">
   <resultMap id="BaseResultMap" type="com.woniu.domain.Patients">
     <id column="patients_id" jdbcType="INTEGER" property="patientsId" />
-<<<<<<< HEAD
-=======
     <result column="users_id" jdbcType="INTEGER" property="usersId" />
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
     <result column="patients_name" jdbcType="VARCHAR" property="patientsName" />
     <result column="patients_phone" jdbcType="VARCHAR" property="patientsPhone" />
     <result column="patients_idcard" jdbcType="VARCHAR" property="patientsIdcard" />
     <result column="patients_credit" jdbcType="INTEGER" property="patientsCredit" />
-<<<<<<< HEAD
-    <result column="roles_id" jdbcType="INTEGER" property="rolesId" />
-=======
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -75,11 +68,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-<<<<<<< HEAD
-    patients_id, patients_name, patients_phone, patients_idcard, patients_credit, roles_id
-=======
     patients_id, users_id, patients_name, patients_phone, patients_idcard, patients_credit
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
   </sql>
   <select id="selectByExample" parameterType="com.woniu.domain.PatientsExample" resultMap="BaseResultMap">
     select

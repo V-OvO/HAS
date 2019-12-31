@@ -4,15 +4,10 @@
   <resultMap id="BaseResultMap" type="com.woniu.domain.Doctors">
     <id column="doctors_id" jdbcType="INTEGER" property="doctorsId" />
     <result column="diagnoserooms_id" jdbcType="INTEGER" property="diagnoseroomsId" />
-<<<<<<< HEAD
-    <result column="doctors_name" jdbcType="VARCHAR" property="doctorsName" />
-    <result column="doctors_photo" jdbcType="VARCHAR" property="doctorsPhoto" />
-=======
     <result column="users_id" jdbcType="INTEGER" property="usersId" />
     <result column="doctors_name" jdbcType="VARCHAR" property="doctorsName" />
     <result column="doctors_photo" jdbcType="VARCHAR" property="doctorsPhoto" />
     <result column="doctors_phone" jdbcType="VARCHAR" property="doctorsPhone" />
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.woniu.domain.Doctors">
     <result column="doctors_desc" jdbcType="LONGVARCHAR" property="doctorsDesc" />
