@@ -56,8 +56,6 @@
 	  		<groupId>org.springframework.boot</groupId>
 	  		<artifactId>spring-boot-devtools</artifactId>
 	  	</dependency>
-<<<<<<< HEAD
-=======
 	  	<dependency>
 	  		<groupId>com.alibaba</groupId>
 	  		<artifactId>druid</artifactId>
@@ -81,7 +79,6 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
 	</dependencies>
   
 </project>

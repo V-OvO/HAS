@@ -19,32 +19,17 @@ public class RolesServiceImpl implements RolesService {
 
 	@Override
 	public void save(Roles r) {
-<<<<<<< HEAD
 		mapper.insert(r);
-=======
-		// TODO Auto-generated method stub
-		
->>>>>>> gyx
 	}
 
 	@Override
 	public void delete(Integer roles_id) {
-<<<<<<< HEAD
 		mapper.deleteByPrimaryKey(roles_id);
-=======
-		// TODO Auto-generated method stub
-		
->>>>>>> gyx
 	}
 
 	@Override
 	public void update(Roles r) {
-<<<<<<< HEAD
 		mapper.updateByPrimaryKey(r);
-=======
-		// TODO Auto-generated method stub
-		
->>>>>>> gyx
 	}
 
 	@Override

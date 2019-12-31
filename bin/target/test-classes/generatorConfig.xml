@@ -18,11 +18,7 @@
         <!-- 数据库链接URL、用户名、密码 -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
             connectionURL="jdbc:mysql://localhost:3306/has?characterEncoding=utf8"
-<<<<<<< HEAD
             userId="root" password="19961123">
-=======
-            userId="root" password="root">
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
         </jdbcConnection>
 
          <!-- 默认false，把JDBC DECIMAL 和 NUMERIC 类型解析为 Integer;
@@ -72,10 +68,7 @@
         <table tableName="roles" />
         <table tableName="schedulings" />
         <table tableName="teams" />
-<<<<<<< HEAD
-=======
         <table tableName="users" />
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
         
     </context>
 </generatorConfiguration>
