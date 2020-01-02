@@ -1,19 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<<<<<<< HEAD
-=======
 <%@ include file="./commons/head.jsp" %>
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<<<<<<< HEAD
 </head>
 <body>
 	<h3>医院预约平台</h3>
-=======
 <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 <style>
 	.title {
@@ -26,7 +22,7 @@
 		<div class="row title">
 			<div class="col-md-12">
 				权限管理模块<br />
-				
+					
 				欢迎<shiro:principal />登录 <a href="/logout">安全退出</a>
 			</div>
 		</div>
@@ -57,7 +53,5 @@
 			</div>
 		</div>
 	</div>	
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
-	
 </body>
 </html>

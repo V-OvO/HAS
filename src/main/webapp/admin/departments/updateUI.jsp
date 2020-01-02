@@ -8,7 +8,6 @@
 </head>
 <body>
 	<h3>科室修改</h3>
-	
 	<form action="/departments/update" method="post">
 		<input type="hidden" name="departmentsId" value="${d.departmentsId }" />
 		科室名称: <input type="text" name="departmentsName" value="${d.departmentsName }" /> <br />
