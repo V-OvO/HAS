@@ -68,6 +68,7 @@
         <table tableName="roles" />
         <table tableName="schedulings" />
         <table tableName="teams" />
+        <table tableName="users" />
         
     </context>
 </generatorConfiguration>

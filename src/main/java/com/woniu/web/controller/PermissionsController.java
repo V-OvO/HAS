@@ -67,12 +67,14 @@ public class PermissionsController {
 	@RequestMapping("findAll")
 	public String findAll(Model model) throws JsonProcessingException {
 		List<Permissions> permissions = service.find();
+
 		ObjectMapper object = new ObjectMapper();
 		// 将permissions转换为json格式
 		String treeJson = object.writeValueAsString(permissions);
 		System.out.println(treeJson);
 		model.addAttribute("list", treeJson);
 		return "admin/permissions/findUI";
+
 	}
 
 }

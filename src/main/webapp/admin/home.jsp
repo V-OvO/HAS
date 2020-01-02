@@ -1,11 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://shiro.apache.org/tags" prefix="shiro" %>
+<<<<<<< HEAD
+=======
+<%@ include file="./commons/head.jsp" %>
+>>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<<<<<<< HEAD
+</head>
+<body>
+	<h3>医院预约平台</h3>
+=======
 <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 <style>
 	.title {
@@ -17,9 +25,9 @@
 	<div class="container">
 		<div class="row title">
 			<div class="col-md-12">
-				蜗牛 权限管理模块<br />
+				权限管理模块<br />
 				
-				欢迎<shiro:principal />大驾光临！！ <a href="/logout">安全退出</a>
+				欢迎<shiro:principal />登录 <a href="/logout">安全退出</a>
 			</div>
 		</div>
 		<div class="row" style="height: 500px;">
@@ -29,6 +37,11 @@
 						权限管理
 						<ul>
 							<li><a href="/permissions/findAll" target="mainFrame">查看权限</a></li>
+<<<<<<< HEAD
+=======
+							
+							<!-- 此处请求controller -->
+>>>>>>> branch 'dev' of git@github.com:V-OvO/HAS.git
 							<li><a href="/permissions/saveUI" target="mainFrame">添加权限</a></li>
 						</ul>
 					</li>
@@ -47,6 +60,7 @@
 			</div>
 		</div>
 	</div>	
+>>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
 	
 </body>
 </html>

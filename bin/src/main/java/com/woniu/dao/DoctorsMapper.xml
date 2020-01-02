@@ -4,8 +4,10 @@
   <resultMap id="BaseResultMap" type="com.woniu.domain.Doctors">
     <id column="doctors_id" jdbcType="INTEGER" property="doctorsId" />
     <result column="diagnoserooms_id" jdbcType="INTEGER" property="diagnoseroomsId" />
+    <result column="users_id" jdbcType="INTEGER" property="usersId" />
     <result column="doctors_name" jdbcType="VARCHAR" property="doctorsName" />
-    <result column="doctors_photo" jdbcType="VARCHAR" property="doctorsPhoto" />
+    <result column="doctors_photo" jdbcType="VARCHAR" property="doctorsPhoto" /> 
+    <result column="doctors_phone" jdbcType="VARCHAR" property="doctorsPhone" />
   </resultMap>
   <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.woniu.domain.Doctors">
     <result column="doctors_desc" jdbcType="LONGVARCHAR" property="doctorsDesc" />
@@ -69,7 +71,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List">
-    doctors_id, diagnoserooms_id, doctors_name, doctors_photo
+    doctors_id, diagnoserooms_id, users_id, doctors_name, doctors_photo, doctors_phone
   </sql>
   <sql id="Blob_Column_List">
     doctors_desc
@@ -123,10 +125,12 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.woniu.domain.Doctors">
-    insert into doctors (doctors_id, diagnoserooms_id, doctors_name, 
-      doctors_photo, doctors_desc)
-    values (#{doctorsId,jdbcType=INTEGER}, #{diagnoseroomsId,jdbcType=INTEGER}, #{doctorsName,jdbcType=VARCHAR}, 
-      #{doctorsPhoto,jdbcType=VARCHAR}, #{doctorsDesc,jdbcType=LONGVARCHAR})
+    insert into doctors (doctors_id, diagnoserooms_id, users_id, 
+      doctors_name, doctors_photo, doctors_phone, 
+      doctors_desc)
+    values (#{doctorsId,jdbcType=INTEGER}, #{diagnoseroomsId,jdbcType=INTEGER}, #{usersId,jdbcType=INTEGER}, 
+      #{doctorsName,jdbcType=VARCHAR}, #{doctorsPhoto,jdbcType=VARCHAR}, #{doctorsPhone,jdbcType=VARCHAR}, 
+      #{doctorsDesc,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.woniu.domain.Doctors">
     insert into doctors
@@ -137,11 +141,17 @@
       <if test="diagnoseroomsId != null">
         diagnoserooms_id,
       </if>
+      <if test="usersId != null">
+        users_id,
+      </if>
       <if test="doctorsName != null">
         doctors_name,
       </if>
       <if test="doctorsPhoto != null">
         doctors_photo,
+      </if>
+      <if test="doctorsPhone != null">
+        doctors_phone,
       </if>
       <if test="doctorsDesc != null">
         doctors_desc,
@@ -154,11 +164,17 @@
       <if test="diagnoseroomsId != null">
         #{diagnoseroomsId,jdbcType=INTEGER},
       </if>
+      <if test="usersId != null">
+        #{usersId,jdbcType=INTEGER},
+      </if>
       <if test="doctorsName != null">
         #{doctorsName,jdbcType=VARCHAR},
       </if>
       <if test="doctorsPhoto != null">
         #{doctorsPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="doctorsPhone != null">
+        #{doctorsPhone,jdbcType=VARCHAR},
       </if>
       <if test="doctorsDesc != null">
         #{doctorsDesc,jdbcType=LONGVARCHAR},
@@ -180,11 +196,17 @@
       <if test="record.diagnoseroomsId != null">
         diagnoserooms_id = #{record.diagnoseroomsId,jdbcType=INTEGER},
       </if>
+      <if test="record.usersId != null">
+        users_id = #{record.usersId,jdbcType=INTEGER},
+      </if>
       <if test="record.doctorsName != null">
         doctors_name = #{record.doctorsName,jdbcType=VARCHAR},
       </if>
       <if test="record.doctorsPhoto != null">
         doctors_photo = #{record.doctorsPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="record.doctorsPhone != null">
+        doctors_phone = #{record.doctorsPhone,jdbcType=VARCHAR},
       </if>
       <if test="record.doctorsDesc != null">
         doctors_desc = #{record.doctorsDesc,jdbcType=LONGVARCHAR},
@@ -198,8 +220,10 @@
     update doctors
     set doctors_id = #{record.doctorsId,jdbcType=INTEGER},
       diagnoserooms_id = #{record.diagnoseroomsId,jdbcType=INTEGER},
+      users_id = #{record.usersId,jdbcType=INTEGER},
       doctors_name = #{record.doctorsName,jdbcType=VARCHAR},
       doctors_photo = #{record.doctorsPhoto,jdbcType=VARCHAR},
+      doctors_phone = #{record.doctorsPhone,jdbcType=VARCHAR},
       doctors_desc = #{record.doctorsDesc,jdbcType=LONGVARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -209,8 +233,10 @@
     update doctors
     set doctors_id = #{record.doctorsId,jdbcType=INTEGER},
       diagnoserooms_id = #{record.diagnoseroomsId,jdbcType=INTEGER},
+      users_id = #{record.usersId,jdbcType=INTEGER},
       doctors_name = #{record.doctorsName,jdbcType=VARCHAR},
-      doctors_photo = #{record.doctorsPhoto,jdbcType=VARCHAR}
+      doctors_photo = #{record.doctorsPhoto,jdbcType=VARCHAR},
+      doctors_phone = #{record.doctorsPhone,jdbcType=VARCHAR}
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -221,11 +247,17 @@
       <if test="diagnoseroomsId != null">
         diagnoserooms_id = #{diagnoseroomsId,jdbcType=INTEGER},
       </if>
+      <if test="usersId != null">
+        users_id = #{usersId,jdbcType=INTEGER},
+      </if>
       <if test="doctorsName != null">
         doctors_name = #{doctorsName,jdbcType=VARCHAR},
       </if>
       <if test="doctorsPhoto != null">
         doctors_photo = #{doctorsPhoto,jdbcType=VARCHAR},
+      </if>
+      <if test="doctorsPhone != null">
+        doctors_phone = #{doctorsPhone,jdbcType=VARCHAR},
       </if>
       <if test="doctorsDesc != null">
         doctors_desc = #{doctorsDesc,jdbcType=LONGVARCHAR},
@@ -236,16 +268,20 @@
   <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.woniu.domain.Doctors">
     update doctors
     set diagnoserooms_id = #{diagnoseroomsId,jdbcType=INTEGER},
+      users_id = #{usersId,jdbcType=INTEGER},
       doctors_name = #{doctorsName,jdbcType=VARCHAR},
       doctors_photo = #{doctorsPhoto,jdbcType=VARCHAR},
+      doctors_phone = #{doctorsPhone,jdbcType=VARCHAR},
       doctors_desc = #{doctorsDesc,jdbcType=LONGVARCHAR}
     where doctors_id = #{doctorsId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.woniu.domain.Doctors">
     update doctors
     set diagnoserooms_id = #{diagnoseroomsId,jdbcType=INTEGER},
+      users_id = #{usersId,jdbcType=INTEGER},
       doctors_name = #{doctorsName,jdbcType=VARCHAR},
-      doctors_photo = #{doctorsPhoto,jdbcType=VARCHAR}
+      doctors_photo = #{doctorsPhoto,jdbcType=VARCHAR},
+      doctors_phone = #{doctorsPhone,jdbcType=VARCHAR}
     where doctors_id = #{doctorsId,jdbcType=INTEGER}
   </update>
 </mapper>

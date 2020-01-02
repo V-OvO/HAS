@@ -57,8 +57,9 @@
         enableSelectByExample:Select多条语句中加入where条件查询，默认为true开启
         selectByExampleQueryId:Select单个对象语句中加入where条件查询，默认为true开启
         -->
-        <table tableName="appointments" />
         <table tableName="departments" />
+        <!-- 
+        <table tableName="appointments" />
         <table tableName="diagnoserooms" />
         <table tableName="doctors" />
         <table tableName="patients" />
@@ -68,7 +69,7 @@
         <table tableName="roles" />
         <table tableName="schedulings" />
         <table tableName="teams" />
-        <table tableName="users" />
+        <table tableName="users" /> -->
         
     </context>
 </generatorConfiguration>
