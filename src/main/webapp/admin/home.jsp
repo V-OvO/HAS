@@ -28,7 +28,7 @@
 					<li>
 						权限管理
 						<ul>
-							<li><a href="/permissions/find" target="mainFrame">查看权限</a></li>
+							<li><a href="/permissions/findAll" target="mainFrame">查看权限</a></li>
 							<li><a href="/permissions/saveUI" target="mainFrame">添加权限</a></li>
 						</ul>
 					</li>

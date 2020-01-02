@@ -193,4 +193,25 @@
       salt = #{salt,jdbcType=VARCHAR}
     where users_id = #{usersId,jdbcType=INTEGER}
   </update>
+  
+  
+  
+  
+  
+  <select id="seleteRolesByUsersId" parameterType="int" resultMap="rm">
+  	SELECT * FROM users_roles ur JOIN roles r
+	ON ur.`roles_id` = r.`roles_id`
+	WHERE users_id = #{usersId}
+  </select>
+  <resultMap type="com.woniu.domain.Roles" id="rm">
+  	<id property="rolesId" column="roles_id"/>
+  	<result property="rolesName" column="roles_name"/>
+  </resultMap>
+  <insert id="insertrp" parameterType="java.util.Map">
+  	insert into users_roles values(#{usersId},#{rolesId})
+  </insert>
+  <delete id="revokeRolesFromUsersId" parameterType="int">
+  	delete from users_roles
+  	where users_Id=#{usersId}
+  </delete>
 </mapper>
