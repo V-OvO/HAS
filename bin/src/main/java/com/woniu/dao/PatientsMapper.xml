@@ -129,23 +129,14 @@
       <if test="patientsCredit != null">
         patients_credit,
       </if>
-<<<<<<< HEAD
-      <if test="rolesId != null">
-        roles_id,
-      </if>
-=======
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="patientsId != null">
         #{patientsId,jdbcType=INTEGER},
       </if>
-<<<<<<< HEAD
-=======
       <if test="usersId != null">
         #{usersId,jdbcType=INTEGER},
       </if>
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
       <if test="patientsName != null">
         #{patientsName,jdbcType=VARCHAR},
       </if>
@@ -158,12 +149,6 @@
       <if test="patientsCredit != null">
         #{patientsCredit,jdbcType=INTEGER},
       </if>
-<<<<<<< HEAD
-      <if test="rolesId != null">
-        #{rolesId,jdbcType=INTEGER},
-      </if>
-=======
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
     </trim>
   </insert>
   <select id="countByExample" parameterType="com.woniu.domain.PatientsExample" resultType="java.lang.Long">
@@ -178,12 +163,9 @@
       <if test="record.patientsId != null">
         patients_id = #{record.patientsId,jdbcType=INTEGER},
       </if>
-<<<<<<< HEAD
-=======
       <if test="record.usersId != null">
         users_id = #{record.usersId,jdbcType=INTEGER},
       </if>
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
       <if test="record.patientsName != null">
         patients_name = #{record.patientsName,jdbcType=VARCHAR},
       </if>
@@ -196,12 +178,6 @@
       <if test="record.patientsCredit != null">
         patients_credit = #{record.patientsCredit,jdbcType=INTEGER},
       </if>
-<<<<<<< HEAD
-      <if test="record.rolesId != null">
-        roles_id = #{record.rolesId,jdbcType=INTEGER},
-      </if>
-=======
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
     </set>
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
@@ -210,19 +186,11 @@
   <update id="updateByExample" parameterType="map">
     update patients
     set patients_id = #{record.patientsId,jdbcType=INTEGER},
-<<<<<<< HEAD
-      patients_name = #{record.patientsName,jdbcType=VARCHAR},
-      patients_phone = #{record.patientsPhone,jdbcType=VARCHAR},
-      patients_idcard = #{record.patientsIdcard,jdbcType=VARCHAR},
-      patients_credit = #{record.patientsCredit,jdbcType=INTEGER},
-      roles_id = #{record.rolesId,jdbcType=INTEGER}
-=======
       users_id = #{record.usersId,jdbcType=INTEGER},
       patients_name = #{record.patientsName,jdbcType=VARCHAR},
       patients_phone = #{record.patientsPhone,jdbcType=VARCHAR},
       patients_idcard = #{record.patientsIdcard,jdbcType=VARCHAR},
       patients_credit = #{record.patientsCredit,jdbcType=INTEGER}
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -230,12 +198,9 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.woniu.domain.Patients">
     update patients
     <set>
-<<<<<<< HEAD
-=======
       <if test="usersId != null">
         users_id = #{usersId,jdbcType=INTEGER},
       </if>
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
       <if test="patientsName != null">
         patients_name = #{patientsName,jdbcType=VARCHAR},
       </if>
@@ -248,30 +213,16 @@
       <if test="patientsCredit != null">
         patients_credit = #{patientsCredit,jdbcType=INTEGER},
       </if>
-<<<<<<< HEAD
-      <if test="rolesId != null">
-        roles_id = #{rolesId,jdbcType=INTEGER},
-      </if>
-=======
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
     </set>
     where patients_id = #{patientsId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.woniu.domain.Patients">
     update patients
-<<<<<<< HEAD
-    set patients_name = #{patientsName,jdbcType=VARCHAR},
-      patients_phone = #{patientsPhone,jdbcType=VARCHAR},
-      patients_idcard = #{patientsIdcard,jdbcType=VARCHAR},
-      patients_credit = #{patientsCredit,jdbcType=INTEGER},
-      roles_id = #{rolesId,jdbcType=INTEGER}
-=======
     set users_id = #{usersId,jdbcType=INTEGER},
       patients_name = #{patientsName,jdbcType=VARCHAR},
       patients_phone = #{patientsPhone,jdbcType=VARCHAR},
       patients_idcard = #{patientsIdcard,jdbcType=VARCHAR},
       patients_credit = #{patientsCredit,jdbcType=INTEGER}
->>>>>>> 5fe621ff9fade7913cc2da48aeb8c8e980c28ae2
     where patients_id = #{patientsId,jdbcType=INTEGER}
   </update>
 </mapper>
