@@ -2,8 +2,11 @@ package com.woniu.web.controller;
 
 import java.util.List;
 
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.woniu.domain.Doctors;
@@ -15,33 +18,40 @@ public class DoctorsController {
 	@Autowired
 	private DoctorService service;
 
+	@RequiresPermissions("doctors:save")
 	@RequestMapping("save")
 	public String save(Doctors doctors) {
 		service.save(doctors);
-		return "admin/index";
+		return "redirect:/doctors/findAll";
 	}
 
-	@RequestMapping("delete")
-	public String delete(Integer doctorsId) {
+	@RequiresPermissions("doctors:delete")
+	@RequestMapping("delete/{doctorsId}")
+	public String delete(@PathVariable Integer doctorsId) {
 		service.delete(doctorsId);
-		return "admin/index";
+		return "redirect:/doctors/findAll";
 	}
 
+	@RequiresPermissions("doctors:update")
 	@RequestMapping("update")
 	public String update(Doctors doctors) {
 		service.update(doctors);
-		return "admin/index";
+		return "redirect:/doctors/findAll";
 	}
 
-	@RequestMapping("findByPrimaryKey")
-	public String findByPrimaryKey(Integer doctorsId) {
+	@RequiresPermissions("doctors:update")
+	@RequestMapping("updateUI/{doctorsId}")
+	public String findByPrimaryKey(@PathVariable Integer doctorsId, Model model) {
 		Doctors doctors = service.find(doctorsId);
-		return "admin/index";
+		model.addAttribute("doctors", doctors);
+		return "admin/doctors/updateUI";
 	}
 
+	@RequiresPermissions("doctors:findAll")
 	@RequestMapping("findAll")
-	public String findAll() {
+	public String findAll(Model model) {
 		List<Doctors> doctors = service.find();
-		return "admin/index";
+		model.addAttribute("list", doctors);
+		return "admin/doctors/findUI";
 	}
 }

@@ -1,19 +1,20 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.woniu</groupId>
 	<artifactId>HAS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	
+
 	<!-- 这是spring boot项目必须有的依赖；spring boot不需要web.xml -->
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.0.4.RELEASE</version>
 	</parent>
-	
+
 	<dependencies>
-		<!-- 搭建spring mvc环境 -->
 	  	<dependency>
 	  		<groupId>org.springframework.boot</groupId>
 	  		<artifactId>spring-boot-starter-web</artifactId>
@@ -53,10 +54,6 @@
 	  		<version>2.1.1</version>
 	  	</dependency>
 	  	<dependency>
-	  		<groupId>org.springframework.boot</groupId>
-	  		<artifactId>spring-boot-devtools</artifactId>
-	  	</dependency>
-	  	<dependency>
 	  		<groupId>com.alibaba</groupId>
 	  		<artifactId>druid</artifactId>
 	  		<version>1.1.21</version>
@@ -65,7 +62,6 @@
 		    <groupId>org.apache.shiro</groupId>
 		    <artifactId>shiro-all</artifactId>
 		    <version>1.4.2</version>
-		    <type>pom</type>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -79,5 +75,11 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+
 	</dependencies>
 </project>

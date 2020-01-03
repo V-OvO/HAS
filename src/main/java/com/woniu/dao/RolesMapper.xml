@@ -161,4 +161,29 @@
     set roles_name = #{rolesName,jdbcType=VARCHAR}
     where roles_id = #{rolesId,jdbcType=INTEGER}
   </update>
+  
+  
+  
+  
+  
+  <select id="selectPermissionsByRolesId" parameterType="int" resultMap="rm">
+  	SELECT * FROM roles_permissions rp JOIN permissions p
+	ON rp.`permissions_id` = p.`permissions_id`
+	WHERE roles_id = #{rolesId}
+  </select>
+  <resultMap type="com.woniu.domain.Permissions" id="rm">
+  	<id property="permissionsId" column="permissions_id"/>
+  	<result property="permissionName" column="permission_name"/>
+  	<result property="parentId" column="parentid"/>
+  	<result property="url" column="url"/>
+  </resultMap>
+  <insert id="insertip" parameterType="java.util.Map">
+  	insert into roles_permissions values(#{rolesId},#{permissionsId})
+  </insert>
+  <delete id="revokePermissionsFormRoleById" parameterType="int">
+  	delete from roles_permissions
+  	where roles_Id=#{rolesId}
+  </delete>
+  
+  
 </mapper>

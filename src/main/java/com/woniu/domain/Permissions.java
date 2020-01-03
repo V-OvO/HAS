@@ -1,73 +1,75 @@
 package com.woniu.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Permissions implements Serializable {
-    private Integer permissionsId;
+	private Integer permissionsId;
 
-    private String permissionName;
+	private String permissionName;
 
-    private Integer parentid;
+	private Integer parentid;
 
-    private String url;
+	private String url;
 
-    private String permissionsDesc;
+	private String permissionsDesc;
 
-    private static final long serialVersionUID = 1L;
+	private List<Permissions> children;
 
-    public Integer getPermissionsId() {
-        return permissionsId;
-    }
+	private static final long serialVersionUID = 1L;
 
-    public void setPermissionsId(Integer permissionsId) {
-        this.permissionsId = permissionsId;
-    }
+	public List<Permissions> getChildren() {
+		return children;
+	}
 
-    public String getPermissionName() {
-        return permissionName;
-    }
+	public void setChildren(List<Permissions> children) {
+		this.children = children;
+	}
 
-    public void setPermissionName(String permissionName) {
-        this.permissionName = permissionName == null ? null : permissionName.trim();
-    }
+	public Integer getPermissionsId() {
+		return permissionsId;
+	}
 
-    public Integer getParentid() {
-        return parentid;
-    }
+	public void setPermissionsId(Integer permissionsId) {
+		this.permissionsId = permissionsId;
+	}
 
-    public void setParentid(Integer parentid) {
-        this.parentid = parentid;
-    }
+	public String getPermissionName() {
+		return permissionName;
+	}
 
-    public String getUrl() {
-        return url;
-    }
+	public void setPermissionName(String permissionName) {
+		this.permissionName = permissionName == null ? null : permissionName.trim();
+	}
 
-    public void setUrl(String url) {
-        this.url = url == null ? null : url.trim();
-    }
+	public Integer getParentid() {
+		return parentid;
+	}
 
-    public String getPermissionsDesc() {
-        return permissionsDesc;
-    }
+	public void setParentid(Integer parentid) {
+		this.parentid = parentid;
+	}
 
-    public void setPermissionsDesc(String permissionsDesc) {
-        this.permissionsDesc = permissionsDesc == null ? null : permissionsDesc.trim();
-    }
+	public String getUrl() {
+		return url;
+	}
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", permissionsId=").append(permissionsId);
-        sb.append(", permissionName=").append(permissionName);
-        sb.append(", parentid=").append(parentid);
-        sb.append(", url=").append(url);
-        sb.append(", permissionsDesc=").append(permissionsDesc);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
+	public void setUrl(String url) {
+		this.url = url == null ? null : url.trim();
+	}
+
+	public String getPermissionsDesc() {
+		return permissionsDesc;
+	}
+
+	public void setPermissionsDesc(String permissionsDesc) {
+		this.permissionsDesc = permissionsDesc == null ? null : permissionsDesc.trim();
+	}
+
+	@Override
+	public String toString() {
+		return "Permissions [permissionsId=" + permissionsId + ", permissionName=" + permissionName + ", parentid="
+				+ parentid + ", url=" + url + ", permissionsDesc=" + permissionsDesc + ", children=" + children + "]";
+	}
+
 }
