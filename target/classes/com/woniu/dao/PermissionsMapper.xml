@@ -248,4 +248,5 @@
       url = #{url,jdbcType=VARCHAR}
     where permissions_id = #{permissionsId,jdbcType=INTEGER}
   </update>
+  
 </mapper>

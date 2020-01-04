@@ -1,3 +1,21 @@
+<<<<<<< HEAD
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ include file="../commons/head.jsp" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/js/zTree_v3/css/zTreeStyle/zTreeStyle.css" />
+<script src="/js/zTree_v3/js/jquery.ztree.all.min.js"></script>
+</head>
+<body>
+	<h3>权限列表</h3>
+	
+	<ul id="ztree" class="ztree"></ul>
+	
+=======
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <%@ page isELIgnored="false"%>
 <%@ include file="../commons/head.jsp" %>
@@ -12,6 +30,7 @@
 <body>
 	<h3>权限列表</h3>
 	<ul id="ztree" class="ztree"></ul>
+>>>>>>> branch 'dev' of git@github.com:V-OvO/HAS.git
 	<script>
 		$(function() {
 

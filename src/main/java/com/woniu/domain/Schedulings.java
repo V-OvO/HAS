@@ -1,7 +1,9 @@
 package com.woniu.domain;
 
+
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 public class Schedulings implements Serializable {
     private Integer schedulingsId;
@@ -13,10 +15,20 @@ public class Schedulings implements Serializable {
     private Date schedulingsEndtime;
 
     private Integer doctorsId;
+    
+    private List<Doctors> doctors;
 
     private static final long serialVersionUID = 1L;
 
-    public Integer getSchedulingsId() {
+    public List<Doctors> getDoctors() {
+		return doctors;
+	}
+
+	public void setDoctors(List<Doctors> doctors) {
+		this.doctors = doctors;
+	}
+
+	public Integer getSchedulingsId() {
         return schedulingsId;
     }
 
@@ -56,19 +68,27 @@ public class Schedulings implements Serializable {
         this.doctorsId = doctorsId;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", schedulingsId=").append(schedulingsId);
-        sb.append(", schedulingsDate=").append(schedulingsDate);
-        sb.append(", schedulingsStarttime=").append(schedulingsStarttime);
-        sb.append(", schedulingsEndtime=").append(schedulingsEndtime);
-        sb.append(", doctorsId=").append(doctorsId);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
+	@Override
+	public String toString() {
+		return "Schedulings [schedulingsId=" + schedulingsId + ", schedulingsDate=" + schedulingsDate
+				+ ", schedulingsStarttime=" + schedulingsStarttime + ", schedulingsEndtime=" + schedulingsEndtime
+				+ ", doctorsId=" + doctorsId + ", doctors=" + doctors + "]";
+	}
+
+    
+//    @Override
+//    public String toString() {
+//        StringBuilder sb = new StringBuilder();
+//        sb.append(getClass().getSimpleName());
+//        sb.append(" [");
+//        sb.append("Hash = ").append(hashCode());
+//        sb.append(", schedulingsId=").append(schedulingsId);
+//        sb.append(", schedulingsDate=").append(schedulingsDate);
+//        sb.append(", schedulingsStarttime=").append(schedulingsStarttime);
+//        sb.append(", schedulingsEndtime=").append(schedulingsEndtime);
+//        sb.append(", doctorsId=").append(doctorsId);
+//        sb.append(", serialVersionUID=").append(serialVersionUID);
+//        sb.append("]");
+//        return sb.toString();
+//    }
 }

@@ -25,6 +25,8 @@ public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
 			path = "error";
 		}
 
+		ex.printStackTrace();
+		
 		return new ModelAndView(path);
 	}
 

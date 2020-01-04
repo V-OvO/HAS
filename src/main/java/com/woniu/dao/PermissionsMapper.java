@@ -1,9 +1,11 @@
 package com.woniu.dao;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import com.woniu.domain.Permissions;
 import com.woniu.domain.PermissionsExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
 public interface PermissionsMapper {
     long countByExample(PermissionsExample example);
@@ -33,4 +35,5 @@ public interface PermissionsMapper {
     int updateByPrimaryKeyWithBLOBs(Permissions record);
 
     int updateByPrimaryKey(Permissions record);
+    
 }

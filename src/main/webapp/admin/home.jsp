@@ -33,8 +33,6 @@
 						权限管理
 						<ul>
 							<li><a href="/permissions/findAll" target="mainFrame">查看权限</a></li>
-							
-							<!-- 此处请求controller -->
 							<li><a href="/permissions/saveUI" target="mainFrame">添加权限</a></li>
 						</ul>
 					</li>
@@ -46,6 +44,24 @@
 							<li><a href="/admin/roles/saveUI.jsp" target="mainFrame">添加角色</a></li>
 						</ul>
 					</li>
+				</ul>
+				<ul>
+					<li>号源
+						<ul>
+							<li><a href="/pool/find" target="mainFrame">查看号源</a></li>
+							<li><a href="/pool/saveUI" target="mainFrame">添加号源</a></li>
+						</ul>
+					</li>
+					
+				</ul>
+				<ul>
+					<li>排班
+						<ul>
+							<li><a href="/schedulings/find" target="mainFrame">查看排班</a></li>
+							<li><a href="/admin/schedulings/saveUI.jsp" target="mainFrame">添加班次</a></li>
+						</ul>
+					</li>
+					
 				</ul>
 			</div>
 			<div class="col-md-9">

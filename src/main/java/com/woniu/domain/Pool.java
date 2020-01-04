@@ -8,10 +8,22 @@ public class Pool implements Serializable {
     private Integer poolResidue;
 
     private Integer schedulingsId;
+    
+    private Schedulings schedulings;
 
     private static final long serialVersionUID = 1L;
+    
+    
 
-    public Integer getPoolId() {
+    public Schedulings getSchedulings() {
+		return schedulings;
+	}
+
+	public void setSchedulings(Schedulings schedulings) {
+		this.schedulings = schedulings;
+	}
+
+	public Integer getPoolId() {
         return poolId;
     }
 
@@ -35,17 +47,24 @@ public class Pool implements Serializable {
         this.schedulingsId = schedulingsId;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", poolId=").append(poolId);
-        sb.append(", poolResidue=").append(poolResidue);
-        sb.append(", schedulingsId=").append(schedulingsId);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
+	@Override
+	public String toString() {
+		return "Pool [poolId=" + poolId + ", poolResidue=" + poolResidue + ", schedulingsId=" + schedulingsId
+				+ ", schedulings=" + schedulings + "]";
+	}
+    
+    
+//    @Override
+//    public String toString() {
+//        StringBuilder sb = new StringBuilder();
+//        sb.append(getClass().getSimpleName());
+//        sb.append(" [");
+//        sb.append("Hash = ").append(hashCode());
+//        sb.append(", poolId=").append(poolId);
+//        sb.append(", poolResidue=").append(poolResidue);
+//        sb.append(", schedulingsId=").append(schedulingsId);
+//        sb.append(", serialVersionUID=").append(serialVersionUID);
+//        sb.append("]");
+//        return sb.toString();
+//    }
 }

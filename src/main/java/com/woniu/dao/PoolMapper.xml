@@ -178,4 +178,33 @@
       schedulings_id = #{schedulingsId,jdbcType=INTEGER}
     where pool_id = #{poolId,jdbcType=INTEGER}
   </update>
+  
+  <resultMap type="com.woniu.domain.Pool" id="pool">
+  	<id column="pool_id" property="poolId"/>
+  	<result column="pool_residue" property="poolResidue"/>
+    <result column="schedulings_id" property="schedulingsId"/>
+    <association property="schedulings" javaType="com.woniu.domain.Schedulings">
+    	<id column="schedulings_id" property="schedulingsId"/>
+    	<result column="schedulings_date" property="schedulingsDate"/>
+    	<result column="schedulings_starttime" property="schedulingsStarttime"/>
+    	<result column="schedulings_endtime" property="schedulingsEndtime"/>
+    	<result column="doctors_id" property="doctorsId"/>
+    	<collection property="doctors" ofType="com.woniu.domain.Doctors">
+    		<id column="doctors_id" property="doctorsId"/>
+    		<result column="diagnoserooms_id" property="diagnoseroomsId"/>
+    		<result column="users_id" property="usersId"/>
+    		<result column="doctors_name" property="doctorsName"/>
+    		<result column="doctors_photo" property="doctorsPhoto"/>
+    		<result column="doctors_phone" property="doctorsPhone"/>
+    		<result column="doctors_desc" property="doctorsDesc"/>
+    	</collection>
+    </association>
+  </resultMap>
+  
+  <select id="selectAll" resultMap="pool" >
+  	select * from pool p 
+  	right join schedulings s on p.schedulings_id=s.schedulings_id
+  	right join doctors d on s.doctors_id=d.doctors_id
+  </select>
+  
 </mapper>

@@ -1,9 +1,11 @@
 package com.woniu.dao;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import com.woniu.domain.Pool;
 import com.woniu.domain.PoolExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
 public interface PoolMapper {
     long countByExample(PoolExample example);
@@ -27,4 +29,6 @@ public interface PoolMapper {
     int updateByPrimaryKeySelective(Pool record);
 
     int updateByPrimaryKey(Pool record);
+    
+    List<Pool> selectAll();
 }
