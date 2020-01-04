@@ -28,7 +28,6 @@
 				<td>${ p.patientsCredit}</td>
 				<td>
 				<a href="/patients/delete/${p.patientsId }">删除</a>
-				|
 				<a href="/patients/updateUI/${p.patientsId }">修改</a>
 				</td>
 			</tr>

@@ -7,10 +7,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<h3>医院预约平台</h3>
-<link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 <style>
 	.title {
 		text-align: center; height: 50px; line-height: 25px; font-size:15px; text-shadow:5px 5px 5px gray
@@ -32,11 +32,14 @@
 					<li>
 						权限管理
 						<ul>
+<<<<<<< HEAD
 							<li><a href="/permissions/findAll" target="mainFrame">查看权限</a></li>
+=======
+							<li><a href="/permissions/findAll" target="mainFrame">查看权限</a></li>
+>>>>>>> branch 'dev' of git@github.com:V-OvO/HAS.git
 							<li><a href="/permissions/saveUI" target="mainFrame">添加权限</a></li>
 						</ul>
 					</li>
-					
 					<li>
 						角色管理
 						<ul>

@@ -9,7 +9,6 @@
 </head>
 <body>
 	<h3>修改权限</h3>
-	
 	<form action="/permissions/update" method="post">
 		<input type="hidden" name="pid" value="${p.pid }" />
 		权限名称: <input type="text" name="pname" value="${p.pname }" /> <br />

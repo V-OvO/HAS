@@ -17,6 +17,5 @@
 		信用值:<input name="patientsCredit" value="p.patientsCredit"><br>
 		<button>添加</button>
 	</form>
-	
 </body>
 </html>

@@ -7,7 +7,6 @@
 </head>
 <body>
 	<h3>增加诊室</h3>
-	
 	<form action="/projects/save" method="post">
 		诊室名称: <input type="text" name="projectsName" /> <br />
 		所属科室: <input type="text" name="departmentsId" /> <br />
