@@ -62,7 +62,7 @@ public class PermissionsController {
 		model.addAttribute("permissions", permissions);
 		return "admin/permissions/updateUI";
 	}
-
+                                                                    
 	@RequiresPermissions("permissions:find")
 	@RequestMapping("findAll")
 	public String findAll(Model model) throws JsonProcessingException {
